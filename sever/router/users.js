@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require("../controller/UsersController")
-
+router.get("/countById", controller.CountById)
 // users
 router.put("/:id", controller.UpdateUser ); // update user data 
 router.delete("/:id", controller.DeleteUser ); // delete user detail

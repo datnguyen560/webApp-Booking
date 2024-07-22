@@ -6,7 +6,6 @@ const home = require('./home');
 const rooms = require('./room');
 const login = require('../utils/authen');
 const VerifyAdmin = require('../utils/verifiToken');
-// midleware authentication
 function router (app) {
 // Routes
     app.use("/api", hotels );

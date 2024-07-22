@@ -6,11 +6,8 @@ class UsersController {
      const salt = bcrypt.genSaltSync(10);
      const hash = bcrypt.hashSync(req.body.password, salt);
      const newUser = new User({
-       username: req.body.username,
-       email: req.body.email,
-       sex: req.body.sex,
+       ...req.body,
        password: hash,
-       isAdmin: req.body.isAdmin,
       });
       try{
         const saveUser = await newUser.save();
@@ -56,6 +53,14 @@ class UsersController {
             res.status(500).json(err);
             console.log("có lõi")
         }
+    }
+    async CountById(req, res) {
+      try {
+        const list = await User.estimatedDocumentCount()
+        res.status(200).json(list)
+      } catch {
+        res.status(500).json(err);
+      }
     }
 }
 

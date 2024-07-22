@@ -12,7 +12,7 @@ const User = new Schema ({
         required: true,
         unique: true,
     },
-    sex: {
+    photo: {
         type: String,
         required: true,
     },

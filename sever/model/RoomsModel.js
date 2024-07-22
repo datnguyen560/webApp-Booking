@@ -18,10 +18,6 @@ const Rooms = new Schema ({
         type: String,
         required: true,
     },
-    // roomNumber: {
-    //     type: [{number: Number, unavailableDates: [{type: [Date]}] }],
-    //     required: true,
-    // },
 }, {timestamps: true})
     
 

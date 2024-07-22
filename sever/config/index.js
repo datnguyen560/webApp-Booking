@@ -5,7 +5,7 @@ async function connect() {
         await mongoose.connect('mongodb://127.0.0.1:27017/UserData')
         console.log("Kết nối thành công")
     } catch (err) {
-        console.log("có lỗi");
+        console.log("Kết nối thất bại");
     }
 }
 

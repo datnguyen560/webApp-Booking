@@ -22,7 +22,6 @@ class RoomsController {
     }
     // update Rooms
     async UpdateRooms(req, res) {
-        // res.send("id hotel - " + req.params.id);
         try {
             const updateRooms = await Rooms.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true})
             res.status(200).json(updateRooms);
