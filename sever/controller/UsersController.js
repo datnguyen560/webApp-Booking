@@ -23,12 +23,10 @@ class UsersController {
           res.status(200).json(user);
         } catch(err) {
           res.status(500).json(err);
-          console.log("có lỗi nha")
         }
     }
     // update User
     async UpdateUser(req, res) {
-        // res.send("id hotel - " + req.params.id);
         try {
             const updateUser = await User.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true})
             res.status(200).json(updateUser);
@@ -51,7 +49,6 @@ class UsersController {
             res.status(200).json({message: "Deleted"});
         } catch (err) {
             res.status(500).json(err);
-            console.log("có lõi")
         }
     }
     async CountById(req, res) {

@@ -22,13 +22,11 @@ class HotelsController {
     }
     // update hotels
     async UpdateHotels(req, res) {
-        // res.send("id hotel - " + req.params.id);
         try {
             const updateHotels = await Hotels.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true})
             res.status(200).json(updateHotels);
         } catch (err) {
             res.status(500).json(err);
-            console.log("có lõi")
         }
     }
     // get hotel by ID
@@ -46,7 +44,6 @@ class HotelsController {
             res.status(200).json({message: "Deleted"});
         } catch (err) {
             res.status(500).json(err);
-            console.log("có lõi")
         }
     }
     async CountByCity(req, res) {
