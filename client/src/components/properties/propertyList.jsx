@@ -8,7 +8,7 @@ const img = [
     "https://r-xx.bstatic.com/xdata/images/hotel/263x210/52979454.jpeg?k=6ac6d0afd28e4ce00a8f817cc3045039e064469a3f9a88059706c0b45adf2e7d&o="
 ]
 function Properties() {
-    const {data, loading} = useFetch("http://localhost:3005/api/hotels/countByType?types=hotel,resort,villas,apartment,cabin")
+    const {data, loading} = useFetch("/api/hotels/countByType?types=hotel,resort,villas,apartment,cabin")
     return ( 
         <div className="propertiesList">
             {loading ? "loading" : <>

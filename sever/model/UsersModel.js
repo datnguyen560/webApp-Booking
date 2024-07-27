@@ -14,7 +14,6 @@ const User = new Schema ({
     },
     photo: {
         type: String,
-        required: true,
     },
     password: {
         type: String,
@@ -23,6 +22,9 @@ const User = new Schema ({
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    phone: {
+        type: String,
     }
 }, {timestamps: true});
 

@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import Header from "../../components/header/header";
 import NavBar from "../../components/nav/nav";
 import "./List.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css';
@@ -15,7 +15,7 @@ function Hotels() {
     const [date, setDate] = useState(location.state.date);
     const [options, setOptions] = useState(location.state.options);
     const [openDate, setOpenDate] = useState(false);
-    const {data, loading} = useFetch(`http://localhost:3005/api/hotels?city=${destination}`)
+    const {data, loading} = useFetch(`/api/hotels?city=${destination}`)
     return ( 
     <div className="hotels">
         <NavBar/>

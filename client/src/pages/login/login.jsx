@@ -4,6 +4,7 @@ import { faUser, faLock, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-i
 import loginbg from '../../asset/loginbg.png';
 import { useContext, useState } from "react";
 import axios from "axios"
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 function Login() {
@@ -23,8 +24,9 @@ function Login() {
         e.preventDefault();
         dispatch({type: "LOGIN_START"})
         try{
-            const res = await axios.post("http://localhost:3005/login", credentials)
+            const res = await axios.post("/login", credentials)
             dispatch({type: "LOGIN_SUCCESS", payload: res.data})
+            toast.success("Đăng nhập thành công")
             navigate('/')
         }catch(err){
             setError(true)

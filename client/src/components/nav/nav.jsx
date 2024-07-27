@@ -11,7 +11,7 @@ function NavBar() {
     return ( 
     <div className="navbar">
        <div className="navContainer">
-         <span className="logo" onClick={() => {navigate('/')}}>DatBooking</span>
+         <span className="logo" onClick={() => {navigate('/')}}>DatBooking.com</span>
          {user 
          ? user.username 
          

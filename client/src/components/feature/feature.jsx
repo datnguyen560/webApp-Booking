@@ -4,7 +4,7 @@ const img3 = "https://cf2.bstatic.com/xdata/images/city/600x600/688956.jpg?k=fc8
 const img2 = "https://cf.bstatic.com/xdata/images/city/600x600/688893.jpg?k=d32ef7ff94e5d02b90908214fb2476185b62339549a1bd7544612bdac51fda31&o="
 const img1 = "https://cf.bstatic.com/xdata/images/city/600x600/688831.jpg?k=7b999c7babe3487598fc4dd89365db2c4778827eac8cb2a47d48505c97959a78&o="
 function Feature() {
-   const {data, loading} = useFetch('http://localhost:3005/api/hotels/countByCity?cities=hồ chí minh,đà lạt,vũng tàu');
+   const {data, loading} = useFetch('/api/hotels/countByCity?cities=hồ chí minh,đà lạt,vũng tàu');
     return ( 
         <div className="feature">
             {loading ? ('loading please wait'): ( <>
