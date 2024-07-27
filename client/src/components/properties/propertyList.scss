@@ -1,0 +1,33 @@
+.propertiesList {
+  width: 100%;
+  max-width: 1024px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.proListItems {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.proListImg {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.proListBtn {
+  position: absolute;
+  right: -10px;
+  top: 60px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgb(133, 67, 67);
+}

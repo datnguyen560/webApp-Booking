@@ -1,0 +1,39 @@
+.feaPro {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.feaProItems {
+  flex: 1 1 calc(33% - 10px);
+  max-width: calc(33% - 10px);
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.feaProItems:nth-child(n + 4) {
+  display: none;
+}
+.feaProImg {
+  width: 100%;
+  border-radius: 5px;
+}
+.feaProName {
+  font-weight: bold;
+}
+.feaProCity {
+  font-weight: 300;
+}
+.feaProPrice {
+  font-weight: 500;
+}
+.feaProRating > button {
+  background-color: #003580;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  margin-right: 7px;
+}
