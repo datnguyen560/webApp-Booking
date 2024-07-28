@@ -23,7 +23,7 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            await axios.post("/users", credentials)
+            await axios.post("http://localhost:8080/users", credentials)
             toast.success("Bạn đã đăng ký thành công")
             navigate('/login')
         }catch(err){

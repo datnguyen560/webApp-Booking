@@ -22,7 +22,7 @@ async function Login(req, res, next) {
         }).status(200).json({...otherDetail})
          next();
     } catch(err) {
-        res.status(500).json({message:"lỗi xác thực"})
+        res.status(401).json({message:"lỗi xác thực"})
     }
   
 }

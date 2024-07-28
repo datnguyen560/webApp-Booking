@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3005;
+const port = 8080;
 const router = require("./router/index");
 const db = require("./config");
 const dotenv = require("dotenv");

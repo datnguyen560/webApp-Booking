@@ -21,7 +21,18 @@
   padding: 10px;
   border-radius: 5px;
 }
-
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
 .navButton {
   margin-left: 10px;
   border: 1px solid #555;

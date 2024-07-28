@@ -1,7 +1,20 @@
 import NavBar from "../../components/nav/nav";
 import "./hotelDetail.scss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleLeft, faAngleRight, faCircleXmark, faLocationDot} from "@fortawesome/free-solid-svg-icons";
+import {faAngleLeft,
+    faAngleRight,
+    faCircleXmark, 
+    faLocationDot,
+    faShower, 
+    faUmbrellaBeach, 
+    faWifi, 
+    faChair, 
+    faSnowflake, 
+    faTv, 
+    faSquareParking, 
+    faPeopleGroup, 
+    faEye,   
+    faT} from "@fortawesome/free-solid-svg-icons";
 import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
 import { useState } from "react";
@@ -43,13 +56,21 @@ function HotelsDetail() {
                 </div>
                 <FontAwesomeIcon icon ={faAngleRight} className="arrow"  onClick={() => handleSlider('r')} />
             </div>}
+            <div className="hotelContainerNavbar">
+                <span className="active">Tổng quan</span>
+                <span>Thông tin & giá</span>
+                <span>Tiện nghi</span>
+                <span>Quy tắc chung</span>
+                <span>Ghi chú</span>
+                <span>Đánh giá (730)</span>
+            </div>
             <div className="hotelWrapper">
                 <button className="bookNow">Resever or Book Now!</button>
                 <h1 className="hotelTitle">
                     Grand Hotel
                 </h1>
                 <div className="hotelAddress">
-                <FontAwesomeIcon icon={faLocationDot}/>
+                <FontAwesomeIcon icon={faLocationDot} className="icon"/>
                 <span>John St 125 New york</span>
                 </div>
                 <span className="hotelDistance">
@@ -64,6 +85,52 @@ function HotelsDetail() {
                             <img onClick={() => handleOpen(i)} src={photo.src} alt="aa" className="photoHotel"/>
                         </div>
                     ))}
+                </div>
+                <div className="hotelExtension">
+                    <div className="hotelExtensionWrap">
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faShower} className="icon"/>
+                            <span>Phòng tắm riêng</span>
+                        </div>
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faUmbrellaBeach} className="icon"/>
+                            <span>Bãi biển</span>
+                        </div>
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faUmbrellaBeach} className="icon"/>
+                            <span>Giáp biển</span>
+                        </div>
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faWifi} className="icon"/>
+                            <span>WiFi miễn phí</span>
+                        </div>
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faChair} className="icon"/>
+                            <span>Ban công</span>
+                        </div>
+                    </div>
+                    <div className="hotelExtensionWrap">
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faSnowflake} className="icon"/>
+                            <span>Điều hòa không khí</span>
+                        </div>
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faTv} className="icon"/>
+                            <span>TV màn hình phẳng</span>
+                        </div>
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faSquareParking} className="icon"/>
+                            <span>Chỗ đổ xe</span>
+                        </div>
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faPeopleGroup} className="icon"/>
+                            <span>Phòng gia đình</span>
+                        </div>
+                        <div className="hotelExtensionDetail">
+                            <FontAwesomeIcon icon={faEye} className="icon"/>
+                            <span>Tằm nhìn ra khung cảnh</span>
+                        </div>
+                    </div>
                 </div>
                 <div className="hotelDetailDes">
                     <div className="hotelDetailDesText">
