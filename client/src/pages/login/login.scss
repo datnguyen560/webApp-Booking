@@ -76,11 +76,16 @@
       font-size: 14px;
     }
   }
-  a {
-    text-decoration: none;
+  span {
     color: rgba(238, 220, 220, 0.555);
     font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
+  }
+  .loginForgot {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 .loginBtn {
@@ -108,6 +113,41 @@
     font-size: 18px;
     &:hover {
       color: rgba(255, 255, 255, 0.658);
+    }
+  }
+}
+.reset {
+  position: absolute;
+  z-index: 1;
+  background-color: hsla(0, 0%, 10%, 0.1);
+  border: 2px solid white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  display: flex;
+  flex-direction: column;
+  label {
+    font-size: 20px;
+    color: #050505;
+  }
+  input {
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 15px 0;
+  }
+  button {
+    padding: 10px;
+    background-color: #0071c2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #0071c2ea;
     }
   }
 }

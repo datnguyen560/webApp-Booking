@@ -14,7 +14,7 @@ async function Login(req, res, next) {
         if(!isPassword) {
             return res.status(500).json({message: "Wrong password"})
         }
-        const token = jwt.sign({id: user._id, isAdmin: user.isAdmin}, process.env.ACCESS_TOKEN_SECRET)
+        const token = jwt.sign({id: user._id, isAdmin: user.isAdmin}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1d'})
 
         const {password, ...otherDetail} = user._doc
         res.cookie("access_token", token, {
@@ -26,5 +26,6 @@ async function Login(req, res, next) {
     }
   
 }
+
 
 module.exports = Login;

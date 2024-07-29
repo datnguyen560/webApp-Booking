@@ -6,10 +6,12 @@ const db = require("./config");
 const dotenv = require("dotenv");
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
+const bodyParser = require('body-parser');
 
 dotenv.config();
 db.connect();
 
+app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());

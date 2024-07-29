@@ -11,6 +11,8 @@ function Login() {
     const [eye, setEye] = useState(false);
     const navigate = useNavigate()
     const [error, setError] = useState(false)
+    const [reset, setReset] = useState(false)
+    const [typeOTP, setTypeOTP] = useState(false)
     const [credentials, setCredentials] = useState({
         username: undefined,
         password: undefined,
@@ -24,13 +26,17 @@ function Login() {
         e.preventDefault();
         dispatch({type: "LOGIN_START"})
         try{
-            const res = await axios.post("/login", credentials)
+            const res = await axios.post("/auth/login", credentials)
             dispatch({type: "LOGIN_SUCCESS", payload: res.data})
             toast.success("Đăng nhập thành công")
             navigate('/')
         }catch(err){
             setError(true)
         }
+    }
+    const handleFinish = () => {
+        setReset(false)
+        setTypeOTP(true)
     }
     return ( 
         <div className="login">
@@ -62,13 +68,24 @@ function Login() {
                         <input type="checkbox" id="loginCheck" />
                         <label htmlFor="loginCheck">Remember me</label>
                     </div>
-                    <a href="/" className="loginForgot">Forgot Password</a>
+                    <span className="loginForgot" onClick={() => setReset(true)}>Forgot Password</span>
                 </div>
                 <button onClick={handleSubmit} className="loginBtn">Login</button>
                 <p className="loginRegister">
                     Don't have an account? <a href="/register">Register</a>
                 </p>
             </form>
+            {reset && <div className="reset">
+                <label htmlFor="email">Email:</label>
+                <input type="text" placeholder="Nhập email" id="email"/>
+                <button onClick={handleFinish}>Gửi mã OTP</button>
+            </div>}
+            {typeOTP && <div className="reset">
+                <label htmlFor="otp">Nhập mã OTP gửi về email của bạn:</label>
+                <input type="text" id="otp"/>
+                <button onClick={() => setTypeOTP(false)}>Xác nhận</button>
+            </div>}
+            
         </div>
      );
 }
